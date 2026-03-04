@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <title>Movie Search App</title>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Search Section -->
+  <div class="flex justify-center pt-10">
+    <form id="input" class="flex gap-3 w-full max-w-xl px-4">
+      <input 
+        type="text" 
+        placeholder="Search movie..." 
+        id="movie-name"
+        class="flex-1 border-2 rounded-lg pl-3 py-2 outline-none focus:border-blue-500"
+      >
+      <button 
+        type="submit" 
+        id="btn-1"
+        class="border-2 rounded-lg px-5 py-2 text-white bg-blue-500 hover:bg-blue-700 transition"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+
+  <!-- Movies Container -->
+  <div 
+    id="container" 
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 max-w-6xl mx-auto"
+  >
+
+    <!-- Movie Card Example -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition">
+     
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
