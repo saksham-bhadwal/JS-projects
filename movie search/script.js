@@ -52,7 +52,7 @@ function displaymovieInfo(data) {
 
         const movieCard = document.createElement("div");
         movieCard.className =
-            "bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition";
+            "bg-gray-300 rounded-xl shadow-md overflow-hidden hover:scale-105 transition";
 
         movieCard.innerHTML = `
             <img 
