@@ -37,7 +37,6 @@ async function movieDAta(movieName) {
     }
     
     return data ;
-    
 }
 
 function displaymovieInfo(data) {
@@ -56,6 +55,7 @@ function displaymovieInfo(data) {
 
         movieCard.innerHTML = `
             <img 
+                alt ="  movie poster"
                 src="${Poster !== "N/A" ? Poster : "https://via.placeholder.com/300x400"}" 
                 class="w-full h-80 object-cover"
             >
