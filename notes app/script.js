@@ -28,6 +28,10 @@ btn1.addEventListener("click", () => {
 
         const textarea = notes.querySelector("textarea");
         displayNotes(textarea.value);
+
+         saveNote(textarea.value)
+
+        notes.remove()
     })
 })
 
@@ -53,6 +57,10 @@ function displayNotes(note) {
                 </p>
     `
     notesContainer.appendChild(newNote)
+   
+}
+
+function saveNote(note){
     let notes = JSON.parse(localStorage.getItem("notes")) || [];
 
     notes.push(note);
@@ -64,13 +72,17 @@ function displayNotes(note) {
 
 
 function getTasks() {
-    return JSON.parse(localStorage.getItem("notes")) || [];
+  return JSON.parse(localStorage.getItem("notes")) || [];
+  
 }
+
 document.addEventListener("DOMContentLoaded", () => {
-
-    const tasks = getTasks();
-
-    tasks.forEach(task => displayNotes(task));
+  
+  const tasks = getTasks();
+  
+  tasks.forEach(task => displayNotes(task));
 
 });
+
+
 
