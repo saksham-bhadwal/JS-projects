@@ -57,3 +57,25 @@ cart.onclick = () => {
     document.getElementById('cartOverlay').onclick = closeCart
 
 };
+
+function showToast(msg) {
+     const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.remove('opacity-0');
+      t.classList.add('opacity-100');
+      setTimeout(() => { t.classList.remove('opacity-100'); t.classList.add('opacity-0'); }, 2500);
+}
+
+document.querySelectorAll(".add-to-cart").forEach(btn =>{
+    let added =false
+    btn.addEventListener('click', ()=> {
+        added =!added
+        showToast("Added to cart!")
+        btn.textContent = "ADDED ✓"
+        if (!added) {
+            btn.textContent ="ADD TO CART"
+             showToast("Removed from cart")
+        }
+})
+})
+
