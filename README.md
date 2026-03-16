@@ -103,6 +103,27 @@ A simple browser game where the user plays against the computer.
 
 ---
 
+### 6️⃣ E-commerce Shopping App
+
+A basic e-commerce style shopping application where users can browse products and add them to a shopping cart.
+
+**Features**
+
+* Display products dynamically
+* Add products to cart
+* Remove items from cart
+* Cart data stored using **localStorage**
+* Dynamic price calculation
+
+**Tech Used**
+
+* HTML
+* CSS
+* JavaScript
+* localStorage
+
+---
+
 ## 🧠 What I Learned
 
 While building these projects, I practiced:
@@ -113,6 +134,7 @@ While building these projects, I practiced:
 * localStorage
 * Game logic in JavaScript
 * Handling user input
+* Building real-world UI features
 
 ---
 
