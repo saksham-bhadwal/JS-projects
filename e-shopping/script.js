@@ -1,7 +1,7 @@
 const cartBtn = document.getElementById("cart")
 const cartContainer = document.getElementById("cart-container")
 
-let cartItems = []
+let cartItems = loadCart()
 
 
 cartBtn.onclick = () => {
@@ -93,19 +93,34 @@ function renderCart() {
 
 function removeFromCart(index) {
     cartItems.splice(index, 1)
+    saveCart()
     renderCart()
 }
 
+function saveCart() {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems))
+}
+
+function loadCart() {
+    const saved = localStorage.getItem("cartItems")
+    return saved ? JSON.parse(saved) : []  // return saved or empty array
+}
 
 document.querySelectorAll(".add-to-cart").forEach(btn => {
-    let added = false
+    const card = btn.closest(".cloths")
+    const name = card.querySelector(".name").textContent
+
+    let added = cartItems.some(item => item.name === name)
+
+    if (added) {
+        btn.textContent = "ADDED ✓"
+    }
+
 
     btn.addEventListener('click', () => {
         added = !added
 
         if (added) {
-            const card = btn.closest(".cloths")
-            const name = card.querySelector(".name").textContent
             const price = card.querySelector(".product-price").textContent
             const img = card.querySelector("img").src
 
@@ -114,14 +129,13 @@ document.querySelectorAll(".add-to-cart").forEach(btn => {
             btn.textContent = "ADDED ✓"
             showToast("Added to cart!")
         } else {
-            const card = btn.closest(".cloths")
-            const name = card.querySelector(".name").textContent
+            name.textContent
             cartItems = cartItems.filter(item => item.name !== name)
 
             btn.textContent = "ADD TO CART"
             showToast("Removed from cart!")
         }
-
+        saveCart()
         renderCart()
     })
 })
